@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.2'
+}
+
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        name = 'mavenCentralReleaseDeployer'
+//        repository(url: "http://10.240.22.145:8082/nexus/content/repositories/releases") {
+//            authentication(userName: "liuyagang", password: "123456")
+//        }
+//        snapshotRepository(url: "http://10.240.22.145:8082/nexus/content/repositories/snapshots") {
+//            authentication(userName: "liuyagang", password: "123456")
+//        }
+//        pom.version = "1.0.5"
+//        pom.artifactId = "sdk"
+//        pom.groupId = "com.shandagames.greport"
+//        pom.name = "greport sdk"
+//        pom.packaging = 'aar'
+//    }
+//}
